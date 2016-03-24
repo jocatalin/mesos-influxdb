@@ -8,7 +8,7 @@
     "--mesos.zookeeper.server=$MASTER:2181",
     "--mesos.framework.name=influxdb-docker",
     "--mesos.principal=mantl-api",
-    "--mesos.secret=$MESOS-SECRET",
+    "--mesos.secret=$SECRET",
     "--mesos.master=zk://$MASTER:2181/mesos" 
   ],
   "env": {
