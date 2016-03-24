@@ -1,0 +1,23 @@
+{
+  "id": "influxdb-docker",
+  "cpus": 0.2,
+  "mem": 256,
+  "instances": 1,
+  "args": [
+    "--spring.config.location=/mnt/mesos/sandbox/influxdb-docker.properties",
+    "--mesos.zookeeper.server=$MASTER:2181"
+  ],
+  "env": {
+    "JAVA_OPTS": "-Xms32m -Xmx128m"
+  },
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "containersol/mesosframework:0.1.0",
+      "network": "HOST"
+    }
+  },
+  "uris": [
+    "https://raw.githubusercontent.com/jocatalin/mesos-influxdb/master/config/influxdb-docker.properties"
+  ]
+}
